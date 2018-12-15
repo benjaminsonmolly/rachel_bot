@@ -7,7 +7,7 @@ from slackclient import SlackClient
 # instantiate Slack client
 slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
 # starterbot's user ID in Slack: value is assigned after the bot starts up
-starterbot_id = None
+rachel_id = None
 
 # constants
 RTM_READ_DELAY = 1 # 1 second delay between reading from RTM
@@ -58,7 +58,7 @@ def handle_command(command, channel):
 
 if __name__ == "__main__":
     if slack_client.rtm_connect(with_team_state=False):
-        print("Starter Bot connected and running!")
+        print("I'm awake, I'm awake.")
         # Read bot's user ID by calling Web API method `auth.test`
         starterbot_id = slack_client.api_call("auth.test")["user_id"]
         while True:
