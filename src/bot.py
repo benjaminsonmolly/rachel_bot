@@ -10,8 +10,10 @@ slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
 rachel_id = None
 
 # constants
-RTM_READ_DELAY = 1 # 1 second delay between reading from RTM
-EXAMPLE_COMMAND = "do"
+#RTM_READ_DELAY = 1 # 1 second delay between reading from RTM
+hello_command = "hello"
+how_are_you = "how are you"
+would_never_forget = "I would never forget"
 MENTION_REGEX = "^<@(|[WU].+?)>(.*)"
 
 def parse_bot_commands(slack_events):
@@ -41,13 +43,19 @@ def handle_command(command, channel):
         Executes bot command if the command is known
     """
     # Default response is help text for the user
-    default_response = "Not sure what you mean. Try *{}*.".format(EXAMPLE_COMMAND)
+    default_response = "Not sure what you mean. You would have me at *{}*, though.".format(hello_command)
 
     # Finds and executes the given command, filling in response
     response = None
     # This is where you start to implement more commands!
-    if command.startswith(EXAMPLE_COMMAND):
-        response = "Sure...write some more code then I can do that!"
+    if command.startswith(hello_command):
+        response = "Hello yourself! Nice to see you... well, you know what I mean."
+
+    if command.startswith(how_are_you):
+        response = "Feeling a little stiff, but could be worse. Thanks for asking! Most people forget."
+
+    if command.startswith(would_never_forget):
+        response = "I wish this was the first time I had heard that line."
 
     # Sends the response back to the channel
     slack_client.api_call(
@@ -65,6 +73,6 @@ if __name__ == "__main__":
             command, channel = parse_bot_commands(slack_client.rtm_read())
             if command:
                 handle_command(command, channel)
-            time.sleep(RTM_READ_DELAY)
+            #time.sleep(RTM_READ_DELAY)
     else:
         print("Connection failed. Exception traceback printed above.")
