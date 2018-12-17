@@ -7,10 +7,11 @@ I'll be building these features first!
 
 ### Structured Conversations about Structure and Character
 
-**Command**: `@rachel structure`
+**Command**: `@rachel structure`  
 Responds in: Channel
 
-**Command**: `@rachel character`
+
+**Command**: `@rachel character`  
 Responds in: Channel
 
 #### Sample response
@@ -21,7 +22,7 @@ Coming Soon!
 
 ### Save Work Written in Slack to Google Doc
 
-**Command**: `@rachel save this in <doc title>`
+**Command**: `@rachel save this in <doc title>`  
 Responds in: Channel
 
 #### Sample Response
@@ -32,7 +33,7 @@ Coming Soon!
 
 ### Work Out Character Details through Knowledge of Personality Types
 
-**Command**: `@rachel personality`
+**Command**: `@rachel personality`  
 Responds in: Channel
 
 #### Sample Response
@@ -43,7 +44,7 @@ Coming Soon!
 
 ### Provide Encouragement When You Need It
 
-Command: `@rachel encourage me`
+Command: `@rachel encourage me`  
 Responds in: Thread
 
 #### Sample Output
@@ -54,7 +55,7 @@ Coming Soon!
 
 ### Help guide in Slack
 
-**Command**: `@rachel help me`
+**Command**: `@rachel help me`  
 Responds in: DM
 
 #### Commands
